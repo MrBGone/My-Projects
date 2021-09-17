@@ -38,11 +38,7 @@ def player_input():
 ####################################################################################
 #Bastardized confirmation of Player 2 being 'O'
 def player2_confirm():
-    if player1 == 'X':
-        player2 = 'O'
-    else:
-        player2 = 'X'
-    return player2
+    return 'O' if player1 == 'X' else 'X'
 
 ####################################################################################
 #Allowing player 1 interation in board cells
