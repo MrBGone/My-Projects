@@ -237,14 +237,15 @@ bank_roll = Bank(game_player.name, 50)
 print(bank_roll)
 time.sleep(4)
 os.system('cls' if os.name == 'nt' else 'clear')
-new_deck = Deck()
-new_deck.shuffle()
 player_hand_total = []
 dealer_hand_total = []
 win_loss = []
 game_on = True
 while game_on:
+
     while 1 < bank_roll.balance < 100:
+        new_deck = Deck()
+        new_deck.shuffle()
         game_player.all_cards.clear()
         game_dealer.all_cards.clear()
         player_hand_total.clear()
@@ -273,7 +274,10 @@ while game_on:
     else:
         break
 
-print("Awe you're out of money! Thanks for playing!'")
+if bank_roll.balance == 0:
+    print("Awe you're out of money! Thanks for playing!'")
+elif bank_roll.balance == 100:
+    print("Congratulations, you doubled your money!")
 
 time.sleep(1)
 os.system('cls' if os.name == 'nt' else 'clear')
